@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Velocity Road — Machine Learning Engineer | Apurva R. Chavan</title>
+  <style>
+    :root{
+      --bg:#0b0f19;
+      --card:#121827;
+      --muted:#93a4bf;
+      --text:#e8eefc;
+      --accent:#7c9cff;
+      --chip:#1b2540;
+      --good:#c8f36a;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1000px 600px at 10% -10%, #1b2440 0, transparent 60%), var(--bg);
+      color: var(--text);
+      line-height:1.6;
+    }
+    header{
+      padding:48px 20px 16px;
+      max-width:1000px; margin:0 auto;
+    }
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:6px 12px; border-radius:999px; background:var(--chip);
+      color:var(--muted); font-size:14px; letter-spacing:.2px;
+    }
+    h1{
+      margin:12px 0 8px; font-size:34px; letter-spacing:.2px;
+      background: linear-gradient(90deg, var(--text), #bcd1ff);
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .sub{color:var(--muted); margin-top:0}
+    .links{display:flex; gap:12px; flex-wrap:wrap; margin-top:12px}
+    .links a{
+      text-decoration:none; color:var(--accent); background:#0e1630;
+      padding:8px 12px; border:1px solid #243157; border-radius:10px; font-weight:600;
+    }
+    main{max-width:1000px; margin:0 auto; padding:12px 20px 60px}
+    .grid{display:grid; grid-template-columns:1.2fr .8fr; gap:22px}
+    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.08)), var(--card);
+      border:1px solid #223055; border-radius:18px; padding:18px 18px 6px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    h2{font-size:20px; margin:0 0 8px}
+    h3{font-size:16px; margin:18px 0 8px; color:#cdd9ff}
+    .q{color:#c9d4ff; font-weight:600; margin-top:16px}
+    .a{margin:6px 0 0}
+    ul{margin:6px 0 10px 22px}
+    li{margin:4px 0}
+    .chips{display:flex; gap:8px; flex-wrap:wrap; margin:10px 0 2px}
+    .chip{background:var(--chip); color:#c9d4ff; padding:4px 10px; border-radius:999px; font-size:12px; border:1px solid #2c3b68}
+    .kpi{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:10px}
+    .kpi div{background:#0e1630; border:1px solid #243157; border-radius:14px; padding:10px}
+    .kpi b{display:block; font-size:20px; color:var(--good)}
+    footer{max-width:1000px; margin:20px auto 60px; color:var(--muted); text-align:center; font-size:13px}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:13px; background:#0e1630; padding:2px 6px; border-radius:6px; border:1px solid #26325a}
+    .tabs{display:flex; gap:8px; flex-wrap:wrap; margin-top:14px}
+  .tabs button{background:#0e1630; border:1px solid #243157; color:#cdd9ff; padding:8px 12px; border-radius:10px; cursor:pointer; font-weight:600}
+  .tabs button.active{outline:2px solid #7c9cff}
+  .tab-panel{display:none}
+  .tab-panel.active{display:block}
+  .case-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
+  @media (max-width:900px){.case-grid{grid-template-columns:1fr}}
+  .metric{background:#0e1630; border:1px solid #243157; border-radius:12px; padding:10px}
+    /* Colorful theme variables when body has .color */
+  body.color{ --bg:#0a0516; --card:#18122B; --muted:#9cb3ff; --text:#F3F4FF; --accent:#FF7EDB; --chip:#2B1748; --good:#7CF8A9; }
+  body.color{ background: radial-gradient(900px 500px at 10% -10%, #2e1455 0, transparent 60%),
+                         radial-gradient(700px 400px at 110% -20%, #1b6cff33 0, transparent 60%),
+                         linear-gradient(180deg,#0a0516 0,#0b0f19 100%); }
+  .chip.rainbow{ background:linear-gradient(135deg,#5b8cff, #ff7edb 50%, #7cf8a9); border:0; color:#0b0f19; font-weight:700 }
+  .card.border-glow{ border:1px solid transparent; background:linear-gradient(var(--card), var(--card)) padding-box,
+                                          linear-gradient(135deg,#5b8cff,#ff7edb,#7cf8a9) border-box; }
+  #toggleColor{ background:#0e1630; border:1px solid #243157; color:#cdd9ff; padding:8px 12px; border-radius:10px; cursor:pointer; font-weight:600 }
+  </style>
+</head>
+$1
+  <div style="min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:28px;background:linear-gradient(135deg,#0ea5e9 0%,#a78bfa 35%,#f472b6 70%,#f59e0b 100%);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0b1020;">
+    <main style="width:100%;max-width:980px;background:#ffffffee;border-radius:18px;box-shadow:0 20px 40px rgba(0,0,0,.18);overflow:hidden;">
+      <header style="padding:28px 28px 18px;background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,.6));backdrop-filter:saturate(140%) blur(6px);">
+        <h1 style="margin:0;font-size:32px;line-height:1.1;font-weight:900;letter-spacing:-0.02em;">Velocity Road — Machine Learning Engineer</h1>
+        <p style="margin:6px 0 0;font-weight:600;opacity:.8;">Apurva Ravikar Chavan · ML Engineer / Data Scientist · Python • PyTorch • Azure ML • MLflow • Docker • CI/CD</p>
+      </header>
+
+      <section style="display:grid;grid-template-columns:1.1fr .9fr;gap:18px;padding:22px 28px 8px;">
+        <div style="background:#f8fafc;border:1px solid #e5e7eb;border-radius:14px;padding:16px 18px;">
+          <h2 style="margin:0 0 8px;font-size:18px">Answer: What interests you about working for Velocity Road?</h2>
+          <p style="margin:0 0 8px;">Two things: the <strong>consulting mindset</strong> and the <strong>ship‑to‑value rhythm</strong>. I enjoy translating exec goals into measurable ML outcomes, then delivering thin‑slice PoCs that graduate to monitored, cost‑aware production services. Velocity Road’s end‑to‑end engagements, client workshops, and emphasis on accelerators match how I work: discovery → data contract → baseline → serve & observe → hand‑off.</p>
+          <ul style="margin:8px 0 0 18px;">
+            <li>Comfortable across strategy, data, modeling, and MLOps; no orphaned notebooks.</li>
+            <li>Azure‑forward but cloud‑agnostic (AKS/ACI, Azure ML; also SageMaker/Vertex).</li>
+            <li>Obsessed with <em>reusable</em> scaffolds: evaluation harnesses, drift monitors, data contracts.</li>
+          </ul>
+        </div>
+        <aside style="background:#fef9c3;border:1px solid #fde68a;border-radius:14px;padding:16px 18px;">
+          <h3 style="margin:0 0 8px;font-size:16px;">Profile Snapshot</h3>
+          <ul style="margin:0 0 6px 18px;">
+            <li>M.S. Data Science (May 2025) • OPT valid through Jul 2026</li>
+            <li>Built RAG systems, forecasting models, and ETL/ELT on cloud</li>
+            <li>Stack: Python, PyTorch/Sklearn, SQL, dbt, Airflow/Dagster, MLflow</li>
+            <li>DevOps: Docker, GitHub Actions, IaC; APIs with FastAPI</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section style="padding:4px 28px 4px;display:grid;grid-template-columns:1fr 1fr;gap:18px;">
+        <div style="background:#ecfeff;border:1px solid #a5f3fc;border-radius:14px;padding:16px 18px;">
+          <h2 style="margin:0 0 10px;font-size:18px">Idea Pitch — 4‑Week “ML Delivery Kit”</h2>
+          <ol style="margin:0 0 0 18px;">
+            <li><strong>Week 1 · Discovery → Data Contract:</strong> KPI tree, owners, SLAs, schemas; risks & guardrails.</li>
+            <li><strong>Week 2 · Thin‑Slice PoC:</strong> dbt + Dagster/Airflow; baseline model; MLflow experiments & metrics.</li>
+            <li><strong>Week 3 · Serve & Observe:</strong> FastAPI service; containers; blue/green deploy; Prometheus/Grafana + business KPIs.</li>
+            <li><strong>Week 4 · Handoff:</strong> runbooks, retrain cadence, cost report, and enablement session for client team.</li>
+          </ol>
+          <p style="margin:10px 0 0;">Outcome: a productionized slice that proves value and a repeatable scaffold Velocity Road can reuse across clients.</p>
+        </div>
+        <div style="background:#eef2ff;border:1px solid #c7d2fe;border-radius:14px;padding:16px 18px;">
+          <h2 style="margin:0 0 10px;font-size:18px">How I Fit</h2>
+          <ul style="margin:0 0 0 18px;">
+            <li><strong>Consulting to Code:</strong> clear problem framing → measurable success criteria.</li>
+            <li><strong>Production First:</strong> tests, containers, CI/CD, observability, rollback plans.</li>
+            <li><strong>Reusable Accelerators:</strong> evaluation harness, data validation, drift & cost dashboards.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section style="padding:4px 28px 4px;display:grid;grid-template-columns:1fr 1fr;gap:18px;">
+        <div style="background:#f1f5f9;border:1px solid #e2e8f0;border-radius:14px;padding:16px 18px;">
+          <h2 style="margin:0 0 8px;font-size:18px;">Selected Experience</h2>
+          <ul style="margin:0 0 0 18px;">
+            <li><strong>Ideatrix — ML/AI Engineer (Intern, 2025):</strong> Designed multi‑agent reasoning for a real‑time game; built Flask/FastAPI services with Socket.IO; instrumented evaluation and latency SLOs.</li>
+            <li><strong>AI Resume Enhancer (Project):</strong> Deployed RAG + scoring pipelines; added model evaluation against ground‑truth skills; packaged as a Streamlit app with batch processing.</li>
+            <li><strong>Time‑Series Energy Forecasting:</strong> Feature engineering + cross‑validation; deployed as API with CI/CD; monitoring for drift and MAPE.</li>
+          </ul>
+        </div>
+        <div style="background:#fff1f2;border:1px solid #fecdd3;border-radius:14px;padding:16px 18px;">
+          <h2 style="margin:0 0 8px;font-size:18px;">Core Skills</h2>
+          <p style="margin:0;">Python, PyTorch, scikit‑learn, SQL, dbt, Airflow/Dagster, MLflow, FastAPI, Docker, GitHub Actions, Azure ML / AKS, AWS/GCP, vector DBs (PGVector/Pinecone), RAG, evaluation harnesses, observability (Prometheus/Grafana), cost tracking.</p>
+        </div>
+      </section>
+
+      <footer style="padding:14px 28px;background:#0b1020;color:#e2e8f0;display:flex;justify-content:space-between;align-items:center;">
+        <span style="opacity:.9;">Apurva Ravikar Chavan · <a href="#" style="color:#93c5fd;text-decoration:none;">GitHub</a> · <a href="#" style="color:#93c5fd;text-decoration:none;">Portfolio</a> · <a href="#" style="color:#93c5fd;text-decoration:none;">Email</a></span>
+      </footer>
+    </main>
+  </div>
+$2
+</html>
